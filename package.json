@@ -1,0 +1,21 @@
+{
+  "name": "Bloom-Bites-Backend",
+  "description": "This will be the backend of project 3 the Bloom-Bites :D",
+  "author": "Y",
+  "version": "2.2.0",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node --watch server.js",
+    "package-update": "npx npm-check-updates -u && npm install && cd client && npx npm-check-updates -u && npm install"
+  },
+  "dependencies": {
+    "@ngneat/falso": "^8.0.2",
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.0",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.16.4",
+    "morgan": "^1.10.1"
+  }
+}
