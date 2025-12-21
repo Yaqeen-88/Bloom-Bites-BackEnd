@@ -1,4 +1,4 @@
-# Bloom-Bites-FrontEnd
+# Bloom-Bites-BackEnd
 
 ## Idea description
 The application is a gift shop that offers flowers, cakes, and candles. Users can create custom gift sets by combining two items, ensuring that each gift is unique. Also, the app offers full customization for cakes, allowing users to choose from different flavors, sizes, decorations, and personalized messages. By giving users the ability to tailor gifts to any occasion, such as birthdays, anniversaries, or special celebrations, the app makes the gifting experience both meaningful and convenient.
