@@ -23,3 +23,5 @@ router.delete(
   middleware.verifyToken,
   controller.DeleteOrder
 )
+
+module.exports = router
