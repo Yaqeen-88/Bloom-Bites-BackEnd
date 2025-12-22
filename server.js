@@ -17,6 +17,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
 app.use('/auth', AuthRouter)
+app.use('/cake', CakeRouter)
 app.use('/candles', CandleRouter)
 
 app.use('/', (req, res) => {
