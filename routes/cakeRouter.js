@@ -2,7 +2,7 @@ const router = require('express').Router()
 const controller = require('../controllers/CakeController')
 const middleware = require('../middleware')
 
-router.get('/cake', controller.getTheCakes)
+router.get('/', controller.getTheCakes)
 router.post(
   '/',
   middleware.stripToken,
