@@ -16,6 +16,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
 app.use('/auth', AuthRouter)
+app.use('/cake', CakeRouter)
 
 app.use('/', (req, res) => {
   res.send(`Connected!`)
@@ -23,5 +24,5 @@ app.use('/', (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`🔃 Running Express server on Port ${PORT} . . . `);
-  
+
 })
