@@ -7,6 +7,7 @@ router.post(
   '/',
   middleware.stripToken,
   middleware.verifyToken,
+  middleware.isAdmin,
   controller.createACake
 )
 
@@ -14,6 +15,7 @@ router.put(
   '/:id',
   middleware.stripToken,
   middleware.verifyToken,
+  middleware.isAdmin,
   controller.updateCake
 )
 
@@ -21,6 +23,7 @@ router.delete(
   '/:id',
   middleware.stripToken,
   middleware.verifyToken,
+  middleware.isAdmin,
   controller.deleteCake
 )
 

@@ -4,8 +4,8 @@ const middleware = require('../middleware')
 
 
 router.get('/', controller.GetFlowers)
-router.post('/', middleware.stripToken, middleware.verifyToken, controller.CreateFlower)
-router.put('/:id', middleware.stripToken, middleware.verifyToken, controller.UpdateFlower)
-router.delete('/:id', middleware.stripToken, middleware.verifyToken, controller.DeleteFlower)
+router.post('/', middleware.stripToken, middleware.verifyToken, middleware.isAdmin, controller.CreateFlower)
+router.put('/:id', middleware.stripToken, middleware.verifyToken, middleware.isAdmin, controller.UpdateFlower)
+router.delete('/:id', middleware.stripToken, middleware.verifyToken, middleware.isAdmin, controller.DeleteFlower)
 
 module.exports = router
