@@ -13,6 +13,18 @@ const GetOrders = async (req, res) => {
   }
 }
 
+// this is only for the admin to use
+const GetAllOrders = async (req, res) => {
+  try {
+    const orders = await Order.find({})
+    res.status(200).send(orders)
+
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({ status: 'Error', msg: 'An error has occurred getting all orders' })
+  }
+}
+
 const CreateOrder = async (req, res) => {
   try{
     //testing out if I can use id from the payload
@@ -64,6 +76,7 @@ const DeleteOrder = async (req, res) => {
 
 module.exports = {
   GetOrders,
+  GetAllOrders,
   CreateOrder,
   UpdateOrder,
   DeleteOrder

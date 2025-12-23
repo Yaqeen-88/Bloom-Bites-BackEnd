@@ -9,6 +9,15 @@ router.get(
   controller.GetOrders
 )
 
+// admin get route
+router.get(
+  '/all',
+  middleware.stripToken,
+  middleware.verifyToken,
+  middleware.isAdmin,
+  controller.GetAllOrders
+)
+
 router.post(
   '/',
   middleware.stripToken,
@@ -20,6 +29,7 @@ router.put(
   '/:id',
   middleware.stripToken,
   middleware.verifyToken,
+  middleware.isAdmin,
   controller.UpdateOrder
 )
 
@@ -27,6 +37,7 @@ router.delete(
   '/:id',
   middleware.stripToken,
   middleware.verifyToken,
+  middleware.isAdmin,
   controller.DeleteOrder
 )
 
