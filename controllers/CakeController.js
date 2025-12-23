@@ -1,4 +1,4 @@
-const {Cake} = require ('../models/Cake.js')
+const {Cake} = require ('../models')
 
 const createACake= async (req,res) => {
   try {
