@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: false }))
 
 app.use('/auth', AuthRouter)
 app.use('/candles', CandleRouter)
-app.use('/order', OrderRouter)
+app.use('/orders', OrderRouter)
 
 app.use('/', (req, res) => {
   res.send(`Connected!`)

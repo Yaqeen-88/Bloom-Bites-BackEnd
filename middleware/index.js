@@ -64,10 +64,26 @@ const verifyToken = (req, res, next) => {
   }
 }
 
+//to check if user is admin or not
+const isAdmin = (req, res, next) => {
+  try {
+    const { payload } = res.locals
+
+    if (payload && payload.role === 'admin') {
+      return next()
+    }
+    res.status(403).send({ status: 'Error', msg: 'Forbidden: Admins only :)' })
+  } catch (error) {
+    console.log(error);
+    res.status(403).send({ status: 'Error', msg: 'Forbidden!' })
+  }
+}
+
 module.exports = {
   hashPassword,
   comparePassword,
   createToken,
   stripToken,
-  verifyToken
+  verifyToken,
+  isAdmin
 }

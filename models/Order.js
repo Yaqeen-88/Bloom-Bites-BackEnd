@@ -5,7 +5,7 @@ const orderSchema = new Schema({
   items: [
     {
       productType: {type: String, enum:['cakes', 'flowers', 'candles']},
-      productId: { type: String },
+      productId: { type: mongoose.Schema.Types.ObjectId },
       productName: { type: String },
       productImage: { type: String },
       price: { type: Number, required: true },

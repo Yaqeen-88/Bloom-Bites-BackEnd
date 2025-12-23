@@ -2,7 +2,13 @@ const router = require('express').Router()
 const controller = require('../controllers/OrderController')
 const middleware = require('../middleware')
 
-router.get('/', controller.GetOrders)
+router.get(
+  '/',
+  middleware.stripToken,
+  middleware.verifyToken,
+  controller.GetOrders
+)
+
 router.post(
   '/',
   middleware.stripToken,
@@ -18,7 +24,7 @@ router.put(
 )
 
 router.delete(
-  ':/id',
+  '/:id',
   middleware.stripToken,
   middleware.verifyToken,
   controller.DeleteOrder
