@@ -6,6 +6,7 @@ const AuthRouter = require('./routes/AuthRouter')
 const CandleRouter = require('./routes/CandleRouter')
 const FlowerRouter = require('./routes/FlowerRouter')
 const CakeRouter = require('./routes/CakeRouter')
+const OrderRouter = require('./routes/OrderRouter')
 
 const PORT = process.env.PORT || 3000
 
@@ -22,6 +23,7 @@ app.use('/auth', AuthRouter)
 app.use('/cake', CakeRouter)
 app.use('/candles', CandleRouter)
 app.use('/flowers',FlowerRouter)
+app.use('/orders', OrderRouter)
 
 app.use('/', (req, res) => {
   res.send(`Connected!`)

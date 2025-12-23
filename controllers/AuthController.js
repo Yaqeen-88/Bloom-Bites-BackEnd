@@ -38,7 +38,8 @@ const Login = async (req, res) => {
       let payload = {
         id: user._id,
         name: user.name,
-        email: user.email
+        email: user.email,
+        role: user.role
       }
       // Creates our JWT and packages it with our payload to send as a response
       let token = middleware.createToken(payload)

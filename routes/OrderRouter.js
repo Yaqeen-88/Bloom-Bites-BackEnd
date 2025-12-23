@@ -1,14 +1,28 @@
 const router = require('express').Router()
-const controller = require('../controllers/CandleController')
+const controller = require('../controllers/OrderController')
 const middleware = require('../middleware')
 
-router.get('/', controller.GetCandles)
+router.get(
+  '/',
+  middleware.stripToken,
+  middleware.verifyToken,
+  controller.GetOrders
+)
+
+// admin get route
+router.get(
+  '/all',
+  middleware.stripToken,
+  middleware.verifyToken,
+  middleware.isAdmin,
+  controller.GetAllOrders
+)
+
 router.post(
   '/',
   middleware.stripToken,
   middleware.verifyToken,
-  middleware.isAdmin,
-  controller.CreateCandle
+  controller.CreateOrder
 )
 
 router.put(
@@ -16,7 +30,7 @@ router.put(
   middleware.stripToken,
   middleware.verifyToken,
   middleware.isAdmin,
-  controller.UpdateCandle
+  controller.UpdateOrder
 )
 
 router.delete(
@@ -24,7 +38,7 @@ router.delete(
   middleware.stripToken,
   middleware.verifyToken,
   middleware.isAdmin,
-  controller.DeleteCandle
+  controller.DeleteOrder
 )
 
 module.exports = router
