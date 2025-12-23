@@ -5,6 +5,7 @@ const cors = require('cors')
 const AuthRouter = require('./routes/AuthRouter')
 const CandleRouter = require('./routes/CandleRouter')
 const FlowerRouter = require('./routes/FlowerRouter')
+const CakeRouter = require('./routes/CakeRouter')
 
 const PORT = process.env.PORT || 3000
 

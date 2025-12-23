@@ -42,7 +42,7 @@ const UpdateFlower = async (req,res) => {
     })
   }
 }
- 
+
 const DeleteFlower = async (req, res) => {
   try {
     await Flower.deleteOne({_id: req.params.id})
