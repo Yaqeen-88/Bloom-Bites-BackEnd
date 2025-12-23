@@ -4,6 +4,7 @@ const cors = require('cors')
 
 const AuthRouter = require('./routes/AuthRouter')
 const CandleRouter = require('./routes/CandleRouter')
+const FlowerRouter = require('./routes/FlowerRouter')
 
 const PORT = process.env.PORT || 3000
 
@@ -19,6 +20,7 @@ app.use(express.urlencoded({ extended: false }))
 app.use('/auth', AuthRouter)
 app.use('/cake', CakeRouter)
 app.use('/candles', CandleRouter)
+app.use('/flowers',FlowerRouter)
 
 app.use('/', (req, res) => {
   res.send(`Connected!`)

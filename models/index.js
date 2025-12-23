@@ -1,12 +1,15 @@
 const mongoose = require('mongoose')
 const userSchema = require('./User')
 const candleSchema = require('./candle')
+const flowerSchema = require('./Flower')
 
 const User = mongoose.model('User', userSchema)
 const Candle = mongoose.model('Candle', candleSchema)
+const Flower = mongoose.model('Flower', flowerSchema)
 
 
 module.exports = {
   User,
-  Candle
+  Candle,
+  Flower
 }
