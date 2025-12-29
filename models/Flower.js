@@ -4,7 +4,6 @@ const flowerSchema = new Schema({
   name: { type: String, required: true },
   description: { type: String },
   stock: { type: Number, min:0 },
-  flowerType: { type: String, required: true },
   color: { type: String, required: true },
   flowerArrangement: { type: String },
   price: { type: Number, required: true },
