@@ -20,6 +20,19 @@ const CreateCandle = async (req, res) => {
   }
 }
 
+const GetCandleById = async (req, res) => {
+  try {
+    const candle = await Candle.findById(req.params.id)
+    if(!candle) {
+      res.status(404).send({status: "Error", msg: "Candle not found"})
+    }
+    res.status(200).send(candle)
+  } catch (error) {
+    console.log(error);
+    res.status(400).send({status: "Error", msg: "An error has occurred getting candle"})
+  }
+}
+
 const UpdateCandle = async (req, res) => {
   try {
     const candle = await Candle.findByIdAndUpdate(req.params.id, req.body, {
@@ -44,6 +57,7 @@ const DeleteCandle = async (req, res) => {
 
 module.exports = {
   GetCandles,
+  GetCandleById,
   CreateCandle,
   UpdateCandle,
   DeleteCandle,

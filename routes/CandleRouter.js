@@ -3,6 +3,8 @@ const controller = require('../controllers/CandleController')
 const middleware = require('../middleware')
 
 router.get('/', controller.GetCandles)
+//get specific candle
+router.get('/:id', controller.GetCandleById)
 router.post(
   '/',
   middleware.stripToken,

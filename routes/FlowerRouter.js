@@ -4,6 +4,8 @@ const middleware = require('../middleware')
 
 
 router.get('/', controller.GetFlowers)
+//get specific flower
+router.get('/:id', controller.GetFlowerById)
 router.post('/', middleware.stripToken, middleware.verifyToken, middleware.isAdmin, controller.CreateFlower)
 router.put('/:id', middleware.stripToken, middleware.verifyToken, middleware.isAdmin, controller.UpdateFlower)
 router.delete('/:id', middleware.stripToken, middleware.verifyToken, middleware.isAdmin, controller.DeleteFlower)

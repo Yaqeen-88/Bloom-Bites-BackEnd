@@ -1,4 +1,4 @@
-const {Cake} = require ('../models/Cake.js')
+const { Cake } = require("../models")
 
 const createACake= async (req,res) => {
   try {
@@ -22,6 +22,19 @@ const getTheCakes = async (req, res) => {
       status: 'Error',
       msg: 'An error has occurred getting the cakes!'
     })
+  }
+}
+
+const getACakeById = async (req, res) => {
+  try {
+    const cake = await Cake.findById(req.params.id)
+    if(!cake) {
+      res.status(404).send({status: "Error", msg: "Cake not found"})
+    }
+    res.status(200).send(cake)
+  } catch (error) {
+    console.log(error);
+    res.status(400).send({status: "Error", msg: "An error has occurred getting cake"})
   }
 }
 
@@ -58,6 +71,7 @@ const deleteCake= async (req, res) => {
 module.exports = {
   createACake,
   getTheCakes,
+  getACakeById,
   updateCake,
   deleteCake,
 }

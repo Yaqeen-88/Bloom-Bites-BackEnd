@@ -3,6 +3,8 @@ const controller = require('../controllers/CakeController')
 const middleware = require('../middleware')
 
 router.get('/', controller.getTheCakes)
+//get specific cake
+router.get('/:id', controller.getACakeById)
 router.post(
   '/',
   middleware.stripToken,

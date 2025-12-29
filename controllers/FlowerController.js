@@ -13,6 +13,19 @@ const GetFlowers = async (req, res) => {
   }
 }
 
+const GetFlowerById = async (req, res) => {
+  try {
+    const flower = await Flower.findById(req.params.id)
+    if(!flower) {
+      res.status(404).send({status: "Error", msg: "Flower not found"})
+    }
+    res.status(200).send(flower)
+  } catch (error) {
+    console.log(error);
+    res.status(400).send({status: "Error", msg: "An error has occurred getting flower"})
+  }
+}
+
 const CreateFlower = async (req, res) => {
   try{
     const flower = await Flower.create(req.body)
@@ -61,6 +74,7 @@ const DeleteFlower = async (req, res) => {
 
 module.exports = {
   GetFlowers,
+  GetFlowerById,
   CreateFlower,
   UpdateFlower,
   DeleteFlower
