@@ -3,8 +3,7 @@ const { Schema } = require("mongoose")
 const flowerSchema = new Schema({
   name: { type: String, required: true },
   description: { type: String },
-  stock: { type: Boolean, default: true },
-  flowerType: { type: String, required: true },
+  stock: { type: Number, min:0 },
   color: { type: String, required: true },
   flowerArrangement: { type: String },
   price: { type: Number, required: true },
