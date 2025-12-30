@@ -37,7 +37,7 @@ router.delete(
   '/:id',
   middleware.stripToken,
   middleware.verifyToken,
-  middleware.isAdmin,
+  // middleware.isAdmin,
   controller.DeleteOrder
 )
 
