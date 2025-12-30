@@ -1,12 +1,12 @@
-const router = require('express').Router()
-const controller = require('../controllers/CakeController')
-const middleware = require('../middleware')
+const router = require("express").Router()
+const controller = require("../controllers/CakeController")
+const middleware = require("../middleware")
 
-router.get('/', controller.getTheCakes)
+router.get("/", controller.getTheCakes)
 //get specific cake
-router.get('/:id', controller.getACakeById)
+router.get("/:id", controller.getACakeById)
 router.post(
-  '/',
+  "/",
   middleware.stripToken,
   middleware.verifyToken,
   middleware.isAdmin,
@@ -14,7 +14,7 @@ router.post(
 )
 
 router.put(
-  '/:id',
+  "/:id",
   middleware.stripToken,
   middleware.verifyToken,
   middleware.isAdmin,
@@ -22,7 +22,7 @@ router.put(
 )
 
 router.delete(
-  '/:id',
+  "/:id",
   middleware.stripToken,
   middleware.verifyToken,
   middleware.isAdmin,
